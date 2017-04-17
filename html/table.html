@@ -60,7 +60,7 @@
 	</div>
 	<script>
 		function rand(down, up) {
-			return Math.floor(Math.random() * up) + down;
+			return Math.floor(Math.random() * (up-down)) + down;
 		}
 		function dateToYMD(date) {
 			var d = date.getDate();
@@ -69,6 +69,8 @@
 			return '' + y + '-' + (m <= 9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d);
 		}
 		$("#btnBuild").click(function () {
+			$("#tabMain thead").empty();
+			$("#tabMain tbody").empty();
 			//范围为[20,40]
 			var colNums = rand(20, 40);
 			//范围为[200,400]
